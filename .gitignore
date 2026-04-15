@@ -1,0 +1,44 @@
+# Terraform
+*.tfstate
+*.tfstate.*
+.terraform/
+.terraform.lock.hcl
+*.tfvars
+!example.tfvars
+!*.example.tfvars
+
+# Kubernetes
+kubeconfig
+*.kubeconfig
+
+# Secrets / credentials
+*.pem
+*.key
+*.crt
+.env
+.env.*
+!.env.example
+secrets/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs / temp
+*.log
+logs/
+tmp/
+.cache/
+
+# Node (프론트 Phase 시 활성화)
+node_modules/
+.next/
+dist/
+build/
