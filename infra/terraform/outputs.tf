@@ -22,3 +22,26 @@ output "nat_gateway_public_ip" {
   description = "NAT Gateway public IP"
   value       = module.vpc.nat_public_ips
 }
+
+# ─── EKS Outputs ───
+
+output "cluster_name" {
+  description = "EKS cluster name"
+  value       = module.eks.cluster_name
+}
+
+output "cluster_endpoint" {
+  description = "EKS API server endpoint"
+  value       = module.eks.cluster_endpoint
+}
+
+output "cluster_certificate_authority_data" {
+  description = "EKS cluster CA certificate"
+  value       = module.eks.cluster_certificate_authority_data
+  sensitive   = true
+}
+
+output "cluster_oidc_issuer_url" {
+  description = "EKS OIDC issuer URL (for IRSA)"
+  value       = module.eks.cluster_oidc_issuer_url
+}
