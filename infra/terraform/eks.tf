@@ -5,7 +5,7 @@ module "eks" {
   version = "~> 20.0"
 
   cluster_name    = "eks-main"
-  cluster_version = "1.30"
+  cluster_version = "1.32"
 
   # VPC 정보 (vpc 모듈 output 참조)
   vpc_id                   = module.vpc.vpc_id
