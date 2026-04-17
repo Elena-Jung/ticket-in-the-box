@@ -11,6 +11,9 @@ last modified - 20260417
 HashiCorp 사가 라이센스를 변경함에 따라 오픈소스 OpenTofu와 같은 오픈소스 프로젝트들이 출범하였다
 
 ### 테라폼 작동 구문
+terraform init
+
+
 terraform plan
 비실행, 어떻게 진행되는가를 ***확인만*** 함
 
@@ -21,7 +24,7 @@ terraform desroy
 실행, 테라폼을 통해 구성하였던 내용을 삭제함. yes를 입력하여 실제 작동을 승인하여야 함
 
 *주의사항* : 테라폼의 eks 형성이 선행 작업들이 실제 프로비저닝 되기 전 형성되려고 할 수 있음, 
-실패시 당황하지 않고 terraform apply를 한번 더 하여 선언 내용을 다시 진행시키면 가능함.
+실패시 terraform apply를 한번 더 하여 선언 내용을 다시 진행시키면 가능함.
 명령형이 아닌 선언형이기에 다시 실행하여도 두개가 만들어지는것이 아닌, 선언된 내용들 중 없는 부분을 채워가는 형식.
 그렇기에 더더욱이 CI/CD 파이프라인 구축 및 자동 배포가 중요함.
 
@@ -72,6 +75,9 @@ kubectl describe (nodes/pods) (객체명)
 ## AWS CLI
 
 ### AWS CLI 명령어
+
+aws configure
+aws cli 로그인, 각각 Access key ID, Secret Access key, default region name, default output format 넷을 요구함.
 
 aws eks update-kubeconfig --name eks-main --region ap-northeast-2
 ~/.kube/config의 클러스터의 엔드포인트를 지금 구성된 EKS 클러스터의 엔드포인트로 재지정
