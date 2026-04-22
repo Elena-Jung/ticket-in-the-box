@@ -31,10 +31,10 @@
 > TBD — Phase 1 진입 시 다이어그램 추가 예정 (ADR-0002 결정 후)
 
 ```
-[온프레 SRV-1]                             [AWS]
-PostgreSQL (개인정보 원본)      ⟷ VPN ⟷    EKS (애플리케이션)
-Tokenization Service                     Prometheus / Grafana
-Column Encryption                        Ingress / ALB
+[온프레미스 SRV-1]                           [AWS]
+PostgreSQL (개인정보 원본)     ⟷ VPN ⟷      EKS (애플리케이션)
+Tokenization Service                      Prometheus / Grafana
+Column Encryption                         Ingress / ALB
 ```
 
 ## Phase 구조

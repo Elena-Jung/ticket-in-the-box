@@ -65,6 +65,9 @@ kubectl get pods -n monitoring
 팟 모니터링 정보 불러오기
 -n  : 네임스페이스 
 
+kubectl apply -f k8s/sample-app/
+k8s/sample-app/ 에서 지정된 내용을 적용, 적용 이전에 AWS 내 엔드포인트를 불러와야 함.
+
 kubectl delete -f k8s/sample-app/
 k8s/sample-app/ 에서 지정된 내용을 강제 삭제, 이를 하여야지만 Ingress가 먼저 삭제됨, 그 뒤에 테라폼 삭제하여야 함
 
