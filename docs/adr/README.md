@@ -28,6 +28,7 @@
 |------|------|--------|------|
 | [0001](./0001-hybrid-cloud-boundary.md) | 하이브리드 클라우드 경계 설정 | Accepted | 2026-04-15 |
 | [0004](./0004-observability-stack.md) | Observability 스택 — kube-prometheus-stack via Helm | Accepted | 2026-04-15 |
+| [0003](./0003-vpn-stack-wireguard.md) | VPN 스택 선택 — WireGuard | Accepted | 2026-04-22 |
 | [0005](./0005-iac-tool-terraform.md) | IaC 도구 — Terraform (HashiCorp 공식 배포판) | Accepted | 2026-04-15 |
 
 ## 예정된 ADR
@@ -35,6 +36,6 @@
 Phase 진행에 따라 추가될 결정들.
 
 - ADR-0002: Data Segregation 전략 (Tokenization + Column Encryption)
-- ADR-0003: VPN 스택 선택 (WireGuard 유력)
+- ~~ADR-0003: VPN 스택 선택~~ → 작성 완료
 - ADR-0006: 좌석 동시성 제어 방식 (분산 락 vs 낙관/비관적 락)
 - ADR-0007: CI/CD 방식 (GitHub Actions + ArgoCD) — 기존 0005에서 번호 이동
