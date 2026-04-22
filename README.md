@@ -1,7 +1,6 @@
 # ticket-in-the-box
 
-> Hybrid cloud ticketing platform — a portfolio project exploring declarative
-> infrastructure, data sovereignty patterns, and performance engineering.
+> 네모 안에 티켓을 넣어
 
 ---
 
@@ -9,12 +8,13 @@
 
 국내 티켓팅 도메인은 다음 세 가지 특성을 동시에 가진다.
 
+- **로그인 세션 정보 유지 필요** - 고객은 로그인을 하여 결제를 하여야한다, 고객의 로그인 정보 유지 필요
 - **극단적 트래픽 스파이크** — 오픈 시점에 집중, 평시는 저트래픽
 - **민감 개인정보 처리** — 결제, 본인 인증, 배송지
 - **CSAP 하등급 제약** — 클라우드에 특정 데이터 저장 제약
 
 이 프로젝트는 위 특성을 가진 **가상 리그 티켓팅 서비스**를 제작하면서,
-하이브리드 클라우드 아키텍처(온프레 DB + AWS 컴퓨트)를 통해
+하이브리드 클라우드 아키텍처(온프레미스 DB + AWS 컴퓨트)를 통해
 **데이터 주권과 탄력적 운영을 양립**시키는 방법을 탐구한다.
 
 ## 선언적 접근 (Declarative Philosophy)
@@ -24,15 +24,15 @@
 1. **Desired State First** — 최종 증거물과 목표 수치를 먼저 선언하고, 거기에 맞춰 역산한다.
 2. **Infrastructure as Code** — 모든 인프라는 Terraform으로 관리. 학원 AWS 계정이 사라져도 재현 가능해야 한다.
 3. **Decision as Document** — 모든 주요 기술 결정은 [ADR](./docs/adr/)로 기록된다. 결정이 일어나는 시점에 쓰고, 나중에 덧붙이지 않는다.
-4. **Measurement over Assertion** — "잘한다"는 주장 대신 숫자와 그래프로 증명한다.
+4. **Measurement over Assertion** — *개선되었다*, *나아지게 된다* 주장 대신 수치로써 증명한다.
 
 ## 아키텍처 개요
 
 > TBD — Phase 1 진입 시 다이어그램 추가 예정 (ADR-0002 결정 후)
 
 ```
-[온프레 SRV-1]                           [AWS]
-PostgreSQL (개인정보 원본)  ⟷ VPN ⟷  EKS (애플리케이션)
+[온프레 SRV-1]                             [AWS]
+PostgreSQL (개인정보 원본)      ⟷ VPN ⟷    EKS (애플리케이션)
 Tokenization Service                     Prometheus / Grafana
 Column Encryption                        Ingress / ALB
 ```
@@ -76,7 +76,3 @@ Column Encryption                        Ingress / ALB
 ## 한계와 향후 과제
 
 > TBD — 각 Phase 종료 시점마다 추가
-
-## 라이선스
-
-개인 포트폴리오 프로젝트. 외부 기여는 현재 받지 않는다.
